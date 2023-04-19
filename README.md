@@ -70,7 +70,7 @@ Downsides for this option:
 - You need to have the GNU core utilities on your machine to run the above command. Windows users are out of luck unless you use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
 
 ## Disable Skill Rust
-*Fix Source: TBA*
+*[Fix Source](https://github.com/neonspectra/CDDA-Choice/issues/2)*
 
 > *I extremely dislike skill rust. I dislike the concept, I dislike the implementation, and trying to account for and prevent it is unpleasant.*
 > 
@@ -78,7 +78,11 @@ Downsides for this option:
 > 
 > --[u/PsychoTexan](https://www.reddit.com/r/cataclysmdda/comments/12eiwpx/comment/jfm09qu/)
 
-**TBA:** I haven't figured out the fix for this change yet because the PR to remove this toggle was just recently merged. If you know the fix, please feel free to PR this repo or open an issue with the answer and I'll add it.
+We can use the [skill antirust](https://github.com/captainsawbones/CDDA-Skill-Antirust) mod to add a zero-point positive trait (ID: `SLY_YEETRUST`) that disables skill rust. This trait can be chosen upon character creation or added via the debug menu on an in-progress save.
+
+The way this mod works is by making a copy of the `Good Memory` positive trait and setting the `skill_rust_multiplier` property to zero. This property controls the multiple by which skill rust occurs, so when it is set to zero skill rust never accumulates.
+
+If you do not want to use a mod, you can open up your `data/json/mutations/mutations.json` and create your own copy of `Good Memory` and modify it as you wish.
 
 ## Disable Welding Rods
 *Fix Source: me*
